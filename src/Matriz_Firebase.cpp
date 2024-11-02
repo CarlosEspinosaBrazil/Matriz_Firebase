@@ -1,9 +1,13 @@
+// Novo Comentario
+
 #include <Header_Matriz.hpp>
 #include <Funcoes_Matriz.h>
 
 String childPath[3];
 
-int AnimaX  = 0;
+
+
+int AnimaX  = 2;
 int Intens  = 0;
 int Vezes   = 0;
 
