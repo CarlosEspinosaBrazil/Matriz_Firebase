@@ -1,15 +1,13 @@
-// Novo Comentario
-
 #include <Header_Matriz.hpp>
 #include <Funcoes_Matriz.h>
 
 String childPath[3];
 
-
-
-int AnimaX  = 2;
+int AnimaX  = 0;
 int Intens  = 0;
 int Vezes   = 0;
+
+// vamos ver se isso ira para o GIT
 
 #define USAR_SERIAL           //// ATENÇÃO  ////         Comentar se for para produção
 // ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
