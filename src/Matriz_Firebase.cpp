@@ -7,8 +7,6 @@ int AnimaX  = 0;
 int Intens  = 0;
 int Vezes   = 0;
 
-// vamos ver se isso ira para o GIT
-
 #define USAR_SERIAL           //// ATENÇÃO  ////         Comentar se for para produção
 // ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 //                             SETUP
