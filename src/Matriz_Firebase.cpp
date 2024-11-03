@@ -3,8 +3,8 @@
 
 String childPath[3];
 
-int AnimaX  = 0;
-int Intens  = 0;
+int anima   = 0;
+int intensidade  = 0;
 int Vezes   = 0;
 
 #define USAR_SERIAL           //// ATENÇÃO  ////         Comentar se for para produção
@@ -24,8 +24,8 @@ void setup(){
    Inicializa_WiFi();
 
    childPath[0] = "/Mensagem";
-   childPath[1] = "/Intens";
-   childPath[2] = "/AnimaX";
+   childPath[1] = "/intensidade";
+   childPath[2] = "/anima";
 
    // FireBase
    ssl_client1.setClient(&basic_client1);
@@ -50,12 +50,12 @@ void setup(){
    Database.get(aClient1, "/Espinosa/Matriz", asyncCB, true, "streamTask1");
 
    // Primeira Carga
-   Intens = Database.get<int>(aClient2, "/Espinosa/Matriz/Intens");   
-   AnimaX = Database.get<int>(aClient2, "/Espinosa/Matriz/AnimaX");   
+   intensidade = Database.get<int>(aClient2, "/Espinosa/Matriz/intensidade");   
+   anima = Database.get<int>(aClient2, "/Espinosa/Matriz/anima");   
 
    // Matriz   
    P.begin();
-   P.setIntensity(Intens);
+   P.setIntensity(intensidade);
    P.displayText(curMessage,scrollAlign, scrollSpeed, scrollPause, scrollEffect, scrollEffect);
    //P.displayText("NOVO MUNDO",scrollAlign, scrollSpeed, scrollPause, scrollEffect, scrollEffect);
 
@@ -71,7 +71,7 @@ void loop(){
    Database.loop();
 
    // Matriz
-   if (Vezes < AnimaX)   {
+   if (Vezes < anima)   {
       if (P.displayAnimate()){ // se terminou
          P.displayReset();
          Vezes++;
@@ -135,12 +135,12 @@ void Processar(String Path, String Valor){
       curMessage[BUF_SIZE - 1] = '\0';  // Garante que a string seja terminada corretamente
       Vezes = 0;
    }
-   // Intensidade
-   if(childPath[1] == Path) Intens = Valor.toInt();
-   P.setIntensity(Intens);
+   // intensidadeidade
+   if(childPath[1] == Path) intensidade = Valor.toInt();
+   P.setIntensity(intensidade);
       
-   // Vezesa de Exibicao
-   if(childPath[2] == Path) AnimaX = Valor.toInt();
+   // Vezes de Exibicao
+   if(childPath[2] == Path) anima = Valor.toInt();
 
 
 }
