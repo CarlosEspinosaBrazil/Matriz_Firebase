@@ -60,9 +60,7 @@ void setup(){
    //P.displayText("NOVO MUNDO",scrollAlign, scrollSpeed, scrollPause, scrollEffect, scrollEffect);
 
    delay(1000); // espinosa
-   //P.displayScroll()  / espinosa
    Pisca_BUILTIN();
-   /// vou incluir isso para testar
 }
 // ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 //                             LOOP
